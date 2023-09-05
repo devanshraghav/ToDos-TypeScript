@@ -2,18 +2,40 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { TodosProvider } from './utils/TodoContext';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Active from './components/Pages/Active';
+import Completed from './components/Pages/Completed';
+import TodoRender from './components/TodoRender';
+
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <TodoRender />,
+      },
+      {
+        path: "/active",
+        element: <Active />,
+      },
+      {
+        path: "/completed",
+        element: <Completed />,
+      },
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <TodosProvider>
+      <RouterProvider router={appRouter} />
+    </TodosProvider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

@@ -6,7 +6,7 @@ const TodoRender = () => {
     let filterData = todos;
 
     return (
-        <div>
+        <div className='main-task'>
             {
                 filterData.map((todo) => {
                     return <li key={todo.id}>

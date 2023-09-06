@@ -6,7 +6,7 @@ const Active = () => {
     let filterData = todos.filter((todo)=> !todo.completed);
 
     return (
-        <div>
+        <div className="main-task">
             {
                 filterData.map((todo) => {
                     return <li key={todo.id}>

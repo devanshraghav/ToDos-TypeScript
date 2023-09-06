@@ -1,38 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;700;900&family=Urbanist:wght@300;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*font-family: 'Lexend Deca', sans-serif;*/
+    font-family: 'Urbanist', sans-serif;
+}
+
+
+html{
+    font-size: 62.5%;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: 10rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App h1{
+    font-size: 3rem;
+    font-family: 'Lexend Deca', sans-serif;
+    margin-bottom: 4.8rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* .App h2 .icons{
+    color: #68B984;
+} */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*===================*/
+/*navbar styling */
+/*====================*/
+
+nav{
+  width:55rem ;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-bottom: .1rem solid #ccc;
+  
 }
 
-.App-link {
-  color: #61dafb;
+nav a{
+  font-size: 2rem;
+  font-family: 'Lexend Deca', sans-serif;
+  color: #ccc;
+  border-bottom: .3rem solid transparent;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav a:hover{
+  border-color: #3A3845;
+}
+
+nav a:active {
+  color: #000;
+  border-color: #68B984;
+}
+
+/*===================*/
+/*Form  styling */
+/*====================*/
+
+form input{
+  width: 45rem;
+  margin: 5rem 0;
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem ;
+  font-weight: bold;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.5rem;
+
+}
+
+form button{
+  margin-left: 2.5rem;
+  padding: 0.5rem 2rem;
+  background-color: #68B984;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+
+}
+
+label{
+  font-size: 1.5rem;
+  letter-spacing: 0.06rem;
+  font-weight: bold;
+  color: #3A3845;
+}
+/*===================*/
+/*todo task list*/
+/*====================*/
+
+.main-task li{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  width:50rem;
+  min-height: 6rem;
+  border-bottom: .1rem solid #ccc;
+}
+
+.main-task li:first-child{
+  border-top: .1rem solid #ccc;
+}
+
+.main-task li:hover{
+  background-color: #fef2f2;
+}
+
+.main-task li input[type="checkbox"]:checked  + label {
+  text-decoration: line-through;
+  color: #D14D72;
+}
+
+.main-task li button{
+  padding: .6rem 1rem;
+  width: 7rem;
+  background-color: #D14D72;
+  color: #FFF9F9;
+  border:none;
+  display: inline-block;
+  cursor: pointer;
+  justify-self: center;
+  letter-spacing: .1rem;
 }
